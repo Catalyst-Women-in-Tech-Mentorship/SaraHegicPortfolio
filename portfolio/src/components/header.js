@@ -1,46 +1,55 @@
-import "../App.css"
+import {useState} from 'react'
+
+import FacebookIcon from '@mui/icons-material/Facebook';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import Face3Icon from '@mui/icons-material/Face3';
+import MenuIcon from '@mui/icons-material/Menu';
+import "../App.css";
 
 const Header = () => {
-return (
-  <div>
-  <div className="navbar">
-    <div className="navbar-left">
-      <img src="logo.png" alt="Logo" className="logo" />
-      
-    </div>
-    <div className="navbar-right">
-    
-        <a href="/">Home</a>
+
+  const [showNavLinks, setShowNavLinks] = useState(false);
+
+  const toggleNavLinks = () => {
+    setShowNavLinks(!showNavLinks);
+  };
+  return (
+    <div className='nav'>
+      <div className="navbar">
+        <div className="navbar-left">
+          <a href = "/" >
+          <Face3Icon />
+          </a>
+          
+        </div>
+        <div className="navbar-right ">
+          <a className="active" href="/">Home</a>
+          <a href="/about">About Me</a>
+          <a href="/projects">Projects</a>
+        </div>
+        <div className="menu-icon">
+          <MenuIcon onClick = {toggleNavLinks}></MenuIcon>
+        </div>
+
+        <div className="nav-links">
+          <a href="/" className="social-icon">
+          <FacebookIcon/>
+          </a>
+          <a href="/" className="social-icon">
+            <InstagramIcon></InstagramIcon>
+          </a>
+          <a href="/" className="social-icon">
+            <LinkedInIcon></LinkedInIcon>
+          </a>
+        </div>
+      </div>
+      <div className={`navbar-right-dropdown ${showNavLinks ? 'visible' : ''}`}>
+        <a className="active" href="/">Home</a>
         <a href="/about">About Me</a>
         <a href="/projects">Projects</a>
       </div>
-      <div className="menu-icon" >
-      <img src="logo.png" alt="Logo" className="logo" />
-        </div>
-      
-      <div className="nav-links">
-      <a href="/" className="social-icon">
-        Social Icon 1
-      </a>
-      <a href="/" className="social-icon">
-        Social Icon 2
-      </a>
-      <a href="/" className="social-icon">
-        Social Icon 3
-      </a>
     </div>
-    
-    
-  </div>
-    <div className="navbar-right-dropdown">
-    
-    <a href="/">Home</a>
-    <a href="/about">About Me</a>
-    <a href="/projects">Projects</a>
-  </div>
-
-  </div>
-  
   );
 };
 
