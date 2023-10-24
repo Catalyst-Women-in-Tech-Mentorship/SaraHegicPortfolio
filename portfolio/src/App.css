@@ -8,6 +8,7 @@ body {
   width: 100%;
   z-index: 1;
 }
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -17,73 +18,79 @@ body {
   height: 50px;
   color: #fff;
 }
+
 .navbar-right {
   padding-left: 20px;
   display: flex;
-  justify-items:center;
+  justify-items: center;
 
 }
-  .navbar-right a , .navbar-right-dropdown a {
-    font-size: 2.5vw;
-    font-weight: bold;
-    padding-left: 30px;    
-    text-decoration: none;
-    color: #fff;
-  }
+
+.navbar-right a,
+.navbar-right-dropdown a {
+  font-size: 2.5vw;
+  font-weight: bold;
+  padding-left: 30px;
+  text-decoration: none;
+  color: #fff;
+}
 
 
-  .navbar-right-dropdown{
+.navbar-right-dropdown {
+  display: none;
+}
+
+
+.visible {
+  display: none !important;
+}
+
+.menu-icon {
+  display: none;
+}
+
+.navbar-right a:hover {
+  color: aqua;
+  text-decoration: underline;
+}
+
+
+.active {
+  color: aqua !important;
+}
+
+@media (max-width: 1200px) {
+
+  .navbar-right {
     display: none;
-  }
-
-
-  .visible {
-    display: none !important;
   }
 
   .menu-icon {
-    display: none;
+    display: flex;
+
   }
 
-  .navbar-right a:hover {
+  .navbar-right-dropdown {
+
+
+
+    font-size: 2.5vw;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    align-items: center;
+    background-color: #333;
+    margin: 5px;
+    padding: 10px;
+  }
+
+  .navbar-right-dropdown a:hover {
+
     color: aqua;
     text-decoration: underline;
   }
-
-  
-  .active {
-    color: aqua !important;
-  }
-
-  @media (max-width: 1200px) {
-   
-    .navbar-right {
-      display: none; 
-    }
-    .menu-icon {
-      display: flex;
-
-    }
-    .navbar-right-dropdown {
-
-      
-  
-      font-size: 2.5vw;
-      font-weight: bold;
-      display: flex;
-      flex-direction: column;
-      color: #fff;
-      align-items: center;
-      background-color: #333;
-      margin: 5px;
-      padding: 10px;
-    }
-    .navbar-right-dropdown a:hover {
-
-      color: aqua;
-    text-decoration: underline;
-    }
-  }
+}
 
 
 .logo {
@@ -109,7 +116,7 @@ body {
 
 .background-container {
   position: relative;
-  background-image: url("/public/background imag 1.png"); /* Postavite putanju do slike */
+  background-image: url("/public/background imag 1.png");
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -120,8 +127,8 @@ body {
 
 .background-container::before {
   content: "";
-  background: rgba(0, 0, 0, 0.5); /* Poluprozirna pozadina za efekt zamagljenja */
-  backdrop-filter: blur(10px); /* Promijenite ovo prema želji za jačinu zamagljivanja */
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
   position: absolute;
   top: 0;
   left: 0;
@@ -137,12 +144,13 @@ body {
   padding: 20px;
 }
 
-.text-overlay h1{
+.text-overlay h1 {
   font-size: 10rem;
   margin: 10px;
 
 }
-.text-overlay p{
+
+.text-overlay p {
   font-size: 2rem;
 }
 
@@ -167,10 +175,10 @@ body {
   text-align: left;
 }
 
-  .center {
-    flex: 1;
-    text-align: center;
-  }
+.center {
+  flex: 1;
+  text-align: center;
+}
 
 .right {
   padding-right: 30px;
@@ -182,7 +190,7 @@ body {
   text-decoration: none;
   color: wheat;
   font-weight: bold;
-  
+
 }
 
 .scroll-to-top {
@@ -192,14 +200,14 @@ body {
   color: #fff;
   font-size: 24px;
   background-color: wheat;
-  
-  
+
+
 }
 
 .center {
   flex: 1;
   text-align: center;
-  position: relative; /* Dodajte relativnu poziciju kako biste omogućili pozicioniranje .arrow-to-top */
+  position: relative;
 }
 
 .scroll-to-top {
@@ -213,20 +221,73 @@ body {
   border-radius: 50%;
   width: 100px;
   height: 100px;
-  position: absolute; /* Omogućite apsolutno pozicioniranje unutar .center */
-  top: 50%; /* Postavite na polovicu visine .center */
-  left: 50%; /* Postavite na polovicu širine .center */
-  transform: translate(-50%, -50%); /* Centriranje po sredini .center */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 12px; /* Prilagodite veličinu fonta prema željama */
-  
+  font-size: 12px;
+
 }
 
 
 .projects-grid {
   background-color: #fff;
   width: 100%;
-  height: 500px;
+}
+
+
+
+/*  projekti grid   */
+
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  padding: 16px;
+}
+
+.box {
+  margin-top: 50px;
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #f0f0f0;
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+
+.box:hover {
+  transform: scale(1.05);
+}
+
+.box img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.box .text {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-top: 8px;
+}
+
+.box a {
+  text-decoration: none;
+  color: #0074e1;
+  transition: color 0.2s;
+}
+
+.box a:hover {
+  color: #0055a5;
 }
