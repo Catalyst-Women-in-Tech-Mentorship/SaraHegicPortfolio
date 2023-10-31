@@ -156,7 +156,7 @@ body {
 }
 
 
-/* footer */
+
 
 .footer {
   position: fixed;
@@ -252,19 +252,19 @@ body {
 
 .line {
   width: 100%;
-  border-top: 2px solid #661111; /* Postavite željenu boju i debljinu linije */
+  border-top: 2px solid #661111; 
   position: absolute;
-  top: 50%; /* Postavite liniju na sredinu */
-  z-index: 0; /* Postavite niži sloj kako bi naslov bio iznad linije */
+  top: 50%; 
+  z-index: 0; 
 }
 
 .header_projects h3 {
-  background-color: #fff; /* Prilagodite boju pozadine prema vašim željama */
-  padding: 0 20px; /* Dodajte željeni razmak oko naslova */
-  position: relative; /* Ponovno postavite relativnu poziciju kako bi naslov bio iznad linije */
+  background-color: #fff; 
+  padding: 0 20px; 
+  position: relative; 
 }
 
-/*  projekti grid   */
+
 
 .container {
   display: flex;
@@ -329,7 +329,7 @@ body {
 
 .box:hover .overlay {
   opacity: 1;
-  /* Prikazivanje sloja kada se hovera nad slikom */
+  
 }
 
 .overlay p {
@@ -340,40 +340,40 @@ body {
 
 
 
-/* footer projects  */ 
+ 
 
 .footer_projects {
-  background-color: #fff; /* Postavite bijelu pozadinu */
-  text-align: center; /* Centrirajte tekst horizontalno */
-  padding: 20px; /* Dodajte željeni razmak oko teksta */
+  background-color: #fff; 
+  text-align: center; 
+  padding: 20px; 
   margin-bottom: 50px;
 }
 
 .footer_projects p {
-  margin: 0; /* Uklonite vanjski margine oko teksta */
+  margin: 0; 
 }
 
 .footer_projects a {
   text-decoration: none;
-  color: #0074e1; /* Prilagodite boju poveznice */
+  color: #0074e1; 
   transition: color 0.2s;
 }
 
 .footer_projects a:hover {
-  color: #0055a5; /* Prilagodite boju poveznice na hover */
+  color: #0055a5; 
 }
 
 
 
-/* contact home page*/
 
 
-/* Stil za logo i tekst u sredini */
+
+
 .intro_to_contact {
   margin-top: 30px;
   display: flex;
   align-items: center;
-  justify-content: center; /* Dodano za centriranje horizontalno */
+  justify-content: center; 
   text-align: center;
   position: relative;
 }
@@ -381,20 +381,20 @@ body {
 .intro_to_contact img {
   max-width: 100%;
   max-height: 100%;
-  border: 1px solid #ccc; /* Linija koja prolazi kroz logo */
+  border: 1px solid #ccc; 
 }
 
 
 .intro_to_contact .line {
   width: 100%;
-  border-top: 2px solid #661111; /* Postavite željenu boju i debljinu linije */
+  border-top: 2px solid #661111; 
   position: absolute;
-  left: 0; /* Počinje od lijeve strane */
-  right: 0; /* Završava na desnoj strani */
-  z-index: -1; /* Postavite niži sloj kako bi naslov bio iznad linije */
+  left: 0; 
+  right: 0; 
+  z-index: -1; 
 }
 
-/* Stil za tekst unutar .text */
+
  .text {
   display: flex;
   justify-content: center;
@@ -402,13 +402,13 @@ body {
   margin: 20px;
 }
 
-/* Stil za sekciju za kontakt na sredini */
+
 .contact_section {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  min-height: 400px; /* Prilagodite visinu prema potrebama */
+  min-height: 400px; 
   margin-bottom: 100px;
 }
 
@@ -426,7 +426,7 @@ body {
 
 .form-row {
   display: flex;
-  justify-content: space-between; /* Postavlja "Name" i "Email" jedno pored drugog */
+  justify-content: space-between; 
 }
 
 .form-group {
@@ -475,7 +475,7 @@ button:hover {
 }
 
 
-/* about  */
+
 
 
 .content {
@@ -533,7 +533,7 @@ margin-left: 10%;
   justify-content: center;
   align-items: center;
   text-align: center;
-  min-height: 400px; /* Prilagodite visinu prema potrebama */
+  min-height: 400px; 
   margin-bottom: 100px;  
   color: #f0f0f0;
   flex-direction: column;
