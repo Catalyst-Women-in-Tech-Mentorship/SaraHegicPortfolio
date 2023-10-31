@@ -7,7 +7,7 @@ import Face3Icon from '@mui/icons-material/Face3';
 import MenuIcon from '@mui/icons-material/Menu';
 import "../App.css";
 
-const Header = () => {
+const Header = ({page}) => {
 
   const [showNavLinks, setShowNavLinks] = useState(false);
 
@@ -24,9 +24,9 @@ const Header = () => {
           
         </div>
         <div className="navbar-right ">
-          <a className="active" href="/">Home</a>
-          <a href="/about">About Me</a>
-          <a href="/projects">Projects</a>
+          <a className={(page === "home") ? "active" : ""} href="/">Home</a>
+          <a className={(page === "about") ? "active" : ""} href="/about">About Me</a>
+          <a className={(page === "projects") ? "active" : ""} href="/projects">Projects</a>
         </div>
         <div className="menu-icon">
           <MenuIcon onClick = {toggleNavLinks}></MenuIcon>

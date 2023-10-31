@@ -7,6 +7,7 @@ body {
   position: absolute;
   width: 100%;
   z-index: 1;
+  top: 0;
 }
 
 .navbar {
@@ -168,6 +169,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
+  z-index: 5;
 }
 
 .left {
@@ -236,9 +238,31 @@ body {
 .projects-grid {
   background-color: #fff;
   width: 100%;
+
 }
 
 
+.header_projects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.line {
+  width: 100%;
+  border-top: 2px solid #661111; /* Postavite željenu boju i debljinu linije */
+  position: absolute;
+  top: 50%; /* Postavite liniju na sredinu */
+  z-index: 0; /* Postavite niži sloj kako bi naslov bio iznad linije */
+}
+
+.header_projects h3 {
+  background-color: #fff; /* Prilagodite boju pozadine prema vašim željama */
+  padding: 0 20px; /* Dodajte željeni razmak oko naslova */
+  position: relative; /* Ponovno postavite relativnu poziciju kako bi naslov bio iznad linije */
+}
 
 /*  projekti grid   */
 
@@ -275,12 +299,7 @@ body {
   border-radius: 8px;
 }
 
-.box .text {
-  font-size: 18px;
-  font-weight: bold;
-  color: #333;
-  margin-top: 8px;
-}
+
 
 .box a {
   text-decoration: none;
@@ -291,3 +310,233 @@ body {
 .box a:hover {
   color: #0055a5;
 }
+
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.box:hover .overlay {
+  opacity: 1;
+  /* Prikazivanje sloja kada se hovera nad slikom */
+}
+
+.overlay p {
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+
+
+/* footer projects  */ 
+
+.footer_projects {
+  background-color: #fff; /* Postavite bijelu pozadinu */
+  text-align: center; /* Centrirajte tekst horizontalno */
+  padding: 20px; /* Dodajte željeni razmak oko teksta */
+  margin-bottom: 50px;
+}
+
+.footer_projects p {
+  margin: 0; /* Uklonite vanjski margine oko teksta */
+}
+
+.footer_projects a {
+  text-decoration: none;
+  color: #0074e1; /* Prilagodite boju poveznice */
+  transition: color 0.2s;
+}
+
+.footer_projects a:hover {
+  color: #0055a5; /* Prilagodite boju poveznice na hover */
+}
+
+
+
+/* contact home page*/
+
+
+/* Stil za logo i tekst u sredini */
+.intro_to_contact {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Dodano za centriranje horizontalno */
+  text-align: center;
+  position: relative;
+}
+
+.intro_to_contact img {
+  max-width: 100%;
+  max-height: 100%;
+  border: 1px solid #ccc; /* Linija koja prolazi kroz logo */
+}
+
+
+.intro_to_contact .line {
+  width: 100%;
+  border-top: 2px solid #661111; /* Postavite željenu boju i debljinu linije */
+  position: absolute;
+  left: 0; /* Počinje od lijeve strane */
+  right: 0; /* Završava na desnoj strani */
+  z-index: -1; /* Postavite niži sloj kako bi naslov bio iznad linije */
+}
+
+/* Stil za tekst unutar .text */
+ .text {
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  margin: 20px;
+}
+
+/* Stil za sekciju za kontakt na sredini */
+.contact_section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 400px; /* Prilagodite visinu prema potrebama */
+  margin-bottom: 100px;
+}
+
+.contact_form {
+  width: 600px;
+  background-color: #f0f0f0;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.contact_form h2 {
+  margin: 0 0 20px;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between; /* Postavlja "Name" i "Email" jedno pored drugog */
+}
+
+.form-group {
+  width: 100%;
+  flex: 1;
+  margin-bottom: 20px;
+}
+
+textarea {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 5px;
+
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  text-align: left;
+  padding-left: 20px;
+}
+
+input {
+  width: 80%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 5px;
+}
+
+
+
+button {
+  background-color: #0074e1;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0055a5;
+}
+
+
+/* about  */
+
+
+.content {
+  color: #f0f0f0;
+
+  margin-top: 100px;
+}
+
+.content-left {
+  width: 50%;
+  align-items: center;
+margin-left: 10%;
+
+}
+
+.content-right {
+
+
+}
+
+.about-header {
+
+  font-size: 200px;
+  margin: 0;
+
+}
+
+.about-h3 {
+  font-size: 80px;
+
+}
+
+.about-p {
+  font-size: 30px;
+
+
+}
+
+.img1 {
+
+  position: absolute;
+  width: 30%;
+  left: 60%;
+  top: 20%;
+  z-index: -1;
+  border-radius: 25%;
+  
+  height: 60%;
+}
+
+
+.skils {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 400px; /* Prilagodite visinu prema potrebama */
+  margin-bottom: 100px;  
+  color: #f0f0f0;
+  flex-direction: column;
+}
+
+
