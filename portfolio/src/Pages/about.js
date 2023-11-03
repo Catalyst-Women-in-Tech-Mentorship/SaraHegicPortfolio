@@ -1,21 +1,8 @@
 import Header from "../components/header";
 import * as React from "react";
-
-import { PieChart, pieArcLabelClasses } from "@mui/x-charts/PieChart";
+import TableSkils from "../components/tableSkils";
 
 const About = () => {
-  const data = [
-    { value: 10, label: "html" },
-    { value: 10, label: "CSS" },
-    { value: 15, label: "JS" },
-    { value: 20, label: "React" },
-  ];
-
-  const size = {
-    width: 800,
-    height: 600,
-  };
-
   return (
     <div>
       <Header page={"about"}></Header>
@@ -42,44 +29,50 @@ const About = () => {
           </div>
         </div>
 
-        <div className="skils">
+        <TableSkils></TableSkils>
 
-            <h1>MY HARD SKILS</h1>
-          <PieChart
-            series={[
-              {
-                arcLabel: (item) => `${item.label} (${item.value})`,
-                arcLabelMinAngle: 45,
-                data,
-                cx: 400,
-                cy: 200,
-                innerRadius: 100,
-                outerRadius: 200,
-                paddingAngle: 5,
-                cornerRadius: 5,
-                startAngle: -90,
-                endAngle: 360,
-              },
-            ]}
-            sx={{
-              [`& .${pieArcLabelClasses.root}`]: {
-                fill: "white",
-                fontWeight: "bold",
-              },
-            }}
-            {...size}
-            slotProps={{
-              legend: { hidden: true },
-            }}
-          />
-        </div>
+        
+<div>
+          <div className="random">
+            <div className="random-text">
+              <div className="r-i">
+              <img  src="../logo192.png" alt="" /> </div>
+              <div className="r-t">
+                <h2>My Mission</h2>
+                <p>
+                  My mission is to design and develop software solutions that
+                  not only meet functional requirements but also exceed
+                  expectations in terms of performance and user experience. I'm
+                  committed to producing high-quality code that makes a
+                  meaningful impact.
+                </p>
+              </div>
+            </div>
+          </div>
 
-        <div className="bottom">
-          <p>
-            I'm open to Job opportunities where I can contribute, learn and
-            grow. If you have a good opportunity that matches my skills and
-            experience then don't hesitate to contact me.
-          </p>
+          <div className="random">
+            <div className="random-text">
+              <div className="r-t">
+              <h2>Let's Work Together:</h2>
+              <p>
+                If you're seeking a Software Engineer who can create optimal,
+                innovative, and efficient software solutions, I'm here to
+                collaborate with you. Whether you have a complex coding
+                challenge, a software project, or a concept that needs to come
+                to life, I'm prepared to help turn your vision into reality.
+                Feel free to get in touch, and let's explore how we can work
+                together to achieve your software development goals. Thank you
+                for visiting my portfolio, and I look forward to the opportunity
+                of working with you.
+              </p>
+              <button type="submit">Contact Me !</button>
+            </div >
+
+            
+            <div className="r-i">
+              <img  src="../logo192.png" alt="" /> </div>              </div>
+            
+          </div>
         </div>
       </div>
     </div>
