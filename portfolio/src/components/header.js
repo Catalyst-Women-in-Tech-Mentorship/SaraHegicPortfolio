@@ -1,4 +1,5 @@
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
+import { motion, AnimatePresence, useAnimation } from 'framer-motion';
 
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
@@ -9,17 +10,23 @@ import "../App.css";
 
 const Header = ({page}) => {
 
+  const controls = useAnimation();
+
+  useEffect(() => {
+    controls.start({ top: 0, transition: { duration: 1 } });
+  }, [controls]);
+
   const [showNavLinks, setShowNavLinks] = useState(false);
 
   const toggleNavLinks = () => {
     setShowNavLinks(!showNavLinks);
   };
   return (
-    <div className='nav'>
+    <motion.div  className='nav' animate={controls}>
       <div className="navbar">
         <div className="navbar-left">
           <a href = "/" >
-          <Face3Icon />
+          <img className="logo" src="../saraLogo.png" alt='sara-logo'/>
           </a>
           
         </div>
@@ -33,23 +40,47 @@ const Header = ({page}) => {
         </div>
 
         <div className="nav-links">
-          <a href="/" className="social-icon">
-          <FacebookIcon/>
-          </a>
-          <a href="/" className="social-icon">
-            <InstagramIcon></InstagramIcon>
-          </a>
-          <a href="/" className="social-icon">
-            <LinkedInIcon></LinkedInIcon>
-          </a>
+          <motion.a
+            href="/"
+            className="social-icon"
+            whileHover={{ scale: 1.1 }}
+          >
+            <FacebookIcon />
+          </motion.a>
+          <motion.a
+            href="/"
+            className="social-icon"
+            whileHover={{ scale: 1.1 }}
+          >
+            <InstagramIcon />
+          </motion.a>
+          <motion.a
+            href="/"
+            className="social-icon"
+            whileHover={{ scale: 1.1 }}
+          >
+            <LinkedInIcon />
+          </motion.a>
         </div>
       </div>
       <div className={`navbar-right-dropdown ${showNavLinks ? 'visible' : ''}`}>
-        <a className="active" href="/">Home</a>
-        <a href="/about">About Me</a>
-        <a href="/projects">Projects</a>
+      <AnimatePresence initial={false}>
+          {showNavLinks && (
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+            >
+              <a className="active" href="/">
+                Home
+              </a>
+              <a href="/about">About Me</a>
+              <a href="/projects">Projects</a>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

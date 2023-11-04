@@ -6,17 +6,15 @@ const ProjectsGrid = () => {
       <div className="header_projects">
         <div className="line"></div>
         <h3>SOME OF MY LATEST WORK</h3>
+        <div className="line"></div>
       </div>
 
-      <div className="footer_projects">
-        <p>
-          Want to see more ? Go to <a href="/"> Projects page </a>
-        </p>
-      </div>
       <Grid container justifyContent="center" spacing={12}>
         <Grid item>
           <div className="box">
-            <img src="../download.png" alt="Slika 1" />
+            <div className="image-container">
+              <img src="../triba.png" alt="Slika 2" />
+            </div>{" "}
             <a href="/" target="_blank" rel="noopener noreferrer">
               <div className="overlay">
                 <p>Triba Game</p>
@@ -27,7 +25,9 @@ const ProjectsGrid = () => {
 
         <Grid item>
           <div className="box">
-            <img src="../download.png" alt="Slika 2" />
+            <div className="image-container">
+              <img src="../quiz.png" alt="Slika 2" />
+            </div>
             <a href="/" target="_blank" rel="noopener noreferrer">
               <div className="overlay">
                 <p>Quizz App</p>
@@ -38,7 +38,9 @@ const ProjectsGrid = () => {
 
         <Grid item>
           <div className="box">
-            <img src="../download.png" alt="Slika 3" />
+            <div className="image-container">
+              <img src="../bb.png" alt="Slika 2" />
+            </div>{" "}
             <a href="/" target="_blank" rel="noopener noreferrer">
               <div className="overlay">
                 <p>Brick Breaker</p>
@@ -47,6 +49,15 @@ const ProjectsGrid = () => {
           </div>
         </Grid>
       </Grid>
+      <div className="footer_projects">
+        <p>
+          Want to see more ? Go to{" "}
+          <a href="/" target="_self">
+            {" "}
+            Projects page{" "}
+          </a>
+        </p>
+      </div>
     </div>
   );
 };

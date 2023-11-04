@@ -16,16 +16,16 @@ const TableSkils = () => {
   ];
 
   const size = {
-    width: 600,
+    width: 200,
     height: 200,
   };
 
   return (
-    <div className="">
+    <div style={{background: "linear-gradient(to bottom,#3F0071 , #150050 10%)", padding:"10%"}}>
       <div className="table-skills">
         <div className="development">
-          <img className="logo" src="../logo192.png" alt="logo"></img>
-          <h3>software enginering</h3>
+          <img className="logo2" src="../si.png" alt="logo"></img>
+          <h3>SOFTWARE ENGINEERING</h3>
           <div className="dev-p">
             {" "}
             <p>
@@ -41,8 +41,8 @@ const TableSkils = () => {
         </div>
 
         <div className="development">
-          <img className="logo" src="../logo192.png" alt="logo"></img>
-          <h3> backend</h3>
+          <img className="logo2" src="../backend.png" alt="logo"></img>
+          <h3>BACKEND</h3>
           <div className="dev-p">
             <p>
               I have a deep understanding of server-side programming and
@@ -53,8 +53,8 @@ const TableSkils = () => {
         </div>
 
         <div className="development">
-          <img className="logo" src="../logo192.png" alt="logo"></img>
-          <h3>frontend</h3>
+          <img className="logo2" src="../frontend.png" alt="logo"></img>
+          <h3>FRONTEND</h3>
           <div className="dev-p">
             {" "}
             <p>
@@ -70,16 +70,16 @@ const TableSkils = () => {
 
       <div className="table-skills">
         <div className="development">
-        <h4>Skills I manage to advance: </h4>
+        <h4 style={{ color: "#d8bfff"}}>Skills I manage to advance: </h4>
         <p>Testing and debugging, Algorithm Skills, Agile Methods, Software Development </p>
 
         </div>
         <div className="development">
-        <h4>Languages I speak</h4>
+        <h4 style={{ color: "#d8bfff"}}>Languages I speak: </h4>
         <p>Node.js, Python, Java, SQL, C++ </p>
         </div>
         <div className="development">
-        <h4>Languages I speak</h4>
+        <h4 style={{ color: "#d8bfff"}}>Languages I speak:</h4>
         <p>HTML, CSS, JavaScript, React.js </p>
         </div>
       </div>
@@ -92,10 +92,10 @@ const TableSkils = () => {
                 arcLabel: (item) => `${item.label} (${item.value})`,
                 arcLabelMinAngle: 45,
                 data: data,
-                cx: 300,
-                cy: 80,
-                innerRadius: 50,
-                outerRadius: 100,
+                cx: 100,
+                cy: 95,
+                innerRadius: 40,
+                outerRadius: 90,
                 paddingAngle: 5,
                 cornerRadius: 5,
                 startAngle: -90,
@@ -121,10 +121,10 @@ const TableSkils = () => {
                 arcLabel: (item) => `${item.label} (${item.value})`,
                 arcLabelMinAngle: 45,
                 data: datasofta,
-                cx: 300,
-                cy: 80,
-                innerRadius: 50,
-                outerRadius: 100,
+                cx: 100,
+                cy: 95,
+                innerRadius: 40,
+                outerRadius: 90,
                 paddingAngle: 5,
                 cornerRadius: 5,
                 startAngle: -90,
@@ -150,10 +150,10 @@ const TableSkils = () => {
                 arcLabel: (item) => `${item.label} (${item.value})`,
                 arcLabelMinAngle: 45,
                 data: datasofta,
-                cx: 300,
-                cy: 80,
-                innerRadius: 50,
-                outerRadius: 100,
+                cx: 100,
+                cy: 95,
+                innerRadius: 40,
+                outerRadius: 90,
                 paddingAngle: 5,
                 cornerRadius: 5,
                 startAngle: -90,
@@ -173,10 +173,11 @@ const TableSkils = () => {
           />
         </div>
       </div>
-      <div className="table-skills">
+      <div className="tools">
         <h3>Dev tools I have experience in usage : </h3>
         <p>Bootstrap, MUI Material, Terminal, GIT, GitHub, JetBrains Developer Tools, Express.js, Django, VisualStudio Code, npm and Yarn</p>
       </div>
+      <div className="line"></div>
     </div>
   );
 };

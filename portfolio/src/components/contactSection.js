@@ -2,8 +2,8 @@ const ContactSection = () => {
   return (
     <div>
       <div className="intro_to_contact">
-        <div className="logo">
-          <img src="../download.png" alt="Logo" />
+        <div >
+          <img  className="logo1" src="../contact.png" alt="Logo" />
           <div className="line"></div>
         </div>
       </div>
