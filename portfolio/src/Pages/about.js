@@ -1,6 +1,6 @@
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
-//import { useInView } from "react-intersection-observer";
+import { useInView } from "react-intersection-observer";
 
 import KeyboardDoubleArrowDownIcon from "@mui/icons-material/KeyboardDoubleArrowDown";
 import Header from "../components/header";
@@ -11,8 +11,8 @@ import Footer from "../components/footer";
 const About = () => {
   const controls1 = useAnimation();
   const controls2 = useAnimation();
- // const [ref, inView] = useInView();
-/*
+  const [ref, inView] = useInView();
+  const [ref1, inView1] = useInView();
 
   useEffect(() => {
     if (inView) {
@@ -21,11 +21,10 @@ const About = () => {
   }, [controls1, inView]);
 
   useEffect(() => {
-    if (inView) {
+    if (inView1) {
       controls2.start({ x: 0 });
     }
-  }, [controls2, inView]);*/
-
+  }, [controls2, inView1]);
 
   return (
     <div>
@@ -88,7 +87,11 @@ const About = () => {
               transition={{ duration: 1, delay: 1.5 }}
             >
               <img className="img1" src="../sara1.jpg" alt="sara1" />
+              
             </motion.div>
+            <button className="btn-cv">
+                <a href="/CV"> See my CV </a>
+              </button>
           </div>
           <div className="next">
             <p> Learn about me more in the next section</p>
@@ -108,6 +111,7 @@ const About = () => {
               <div className="random-text">
                 <motion.div
                   className="r-i"
+                  ref={ref}
                   initial={{ x: -100 }}
                   animate={controls1}
                 >
@@ -150,6 +154,7 @@ const About = () => {
                 </div>
                 <motion.div
                   className="r-i"
+                  ref={ref1}
                   initial={{ x: 100 }}
                   animate={controls2}
                 >

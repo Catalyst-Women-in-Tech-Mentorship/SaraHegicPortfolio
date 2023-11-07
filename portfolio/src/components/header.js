@@ -1,15 +1,14 @@
-import {useState, useEffect} from 'react'
-import { motion, AnimatePresence, useAnimation } from 'framer-motion';
-
-import FacebookIcon from '@mui/icons-material/Facebook';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import Face3Icon from '@mui/icons-material/Face3';
-import MenuIcon from '@mui/icons-material/Menu';
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence, useAnimation } from "framer-motion";
+import Projects from "../Pages/projects";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import Face3Icon from "@mui/icons-material/Face3";
+import MenuIcon from "@mui/icons-material/Menu";
 import "../App.css";
 
-const Header = ({page}) => {
-
+const Header = ({ page }) => {
   const controls = useAnimation();
 
   useEffect(() => {
@@ -22,65 +21,68 @@ const Header = ({page}) => {
     setShowNavLinks(!showNavLinks);
   };
   return (
-    <motion.div  className='nav' animate={controls}>
-      <div className="navbar">
-        <div className="navbar-left">
-          <a href = "/" >
-          <img className="logo" src="../saraLogo.png" alt='sara-logo'/>
-          </a>
-          
-        </div>
-        <div className="navbar-right ">
-          <a className={(page === "home") ? "active" : ""} href="/">Home</a>
-          <a className={(page === "about") ? "active" : ""} href="/about">About Me</a>
-          <a className={(page === "projects") ? "active" : ""} href="/projects">Projects</a>
-        </div>
-        <div className="menu-icon">
-          <MenuIcon onClick = {toggleNavLinks}></MenuIcon>
-        </div>
+    <div>
+      <motion.div className="nav" animate={controls}>
+        <div className="navbar">
+          <div className="navbar-left">
+            <a href="/">
+              <img className="logo" src="../saraLogo.png" alt="sara-logo" />
+            </a>
+          </div>
+          <div className="navbar-right ">
+            <a className={page === "home" ? "active" : ""} href="/">
+              Home
+            </a>
+            <a className={page === "about" ? "active" : ""} href="/about">
+              About Me
+            </a>
+            <a className={page === "projects" ? "active" : ""} href="/projects">
+              Projects
+            </a>
+          </div>
+          <div className="menu-icon">
+            <MenuIcon onClick={toggleNavLinks}></MenuIcon>
+          </div>
 
-        <div className="nav-links">
-          <motion.a
-            href="/"
-            className="social-icon"
-            whileHover={{ scale: 1.1 }}
-          >
-            <FacebookIcon />
-          </motion.a>
-          <motion.a
-            href="/"
-            className="social-icon"
-            whileHover={{ scale: 1.1 }}
-          >
-            <InstagramIcon />
-          </motion.a>
-          <motion.a
-            href="/"
-            className="social-icon"
-            whileHover={{ scale: 1.1 }}
-          >
-            <LinkedInIcon />
-          </motion.a>
-        </div>
-      </div>
-      <div className={`navbar-right-dropdown ${showNavLinks ? 'visible' : ''}`}>
-      <AnimatePresence initial={false}>
-          {showNavLinks && (
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
+          <div className="nav-links">
+            <motion.a
+              href="/"
+              className="social-icon"
+              whileHover={{ scale: 1.1 }}
             >
+              <FacebookIcon />
+            </motion.a>
+            <motion.a
+              href="/"
+              className="social-icon"
+              whileHover={{ scale: 1.1 }}
+            >
+              <InstagramIcon />
+            </motion.a>
+            <motion.a
+              href="/"
+              className="social-icon"
+              whileHover={{ scale: 1.1 }}
+            >
+              <LinkedInIcon />
+            </motion.a>
+          </div>
+        </div>
+        <div
+          className={`navbar-right-dropdown ${showNavLinks ? "visible" : ""}`}
+        >
+          
+            <div>
               <a className="active" href="/">
                 Home
               </a>
               <a href="/about">About Me</a>
               <a href="/projects">Projects</a>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
-    </motion.div>
+            </div>
+          
+        </div>
+      </motion.div>
+    </div>
   );
 };
 
