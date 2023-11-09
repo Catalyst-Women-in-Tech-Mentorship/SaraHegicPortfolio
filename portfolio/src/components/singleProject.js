@@ -1,54 +1,58 @@
-import Footer from "../components/footer";
-import Header from "../components/header";
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React from "react";
+import { useParams } from "react-router-dom";
+const SingleProject = () => {
+  const { projectName } = useParams();
 
-import * as React from "react";
-import Box from "@mui/material/Box";
-import ImageList from "@mui/material/ImageList";
-import ImageListItem from "@mui/material/ImageListItem";
+  const projectData = itemData.find(
+    (item) => item.project_name === projectName
+  );
 
-const Projects = () => {
-  const navigate = useNavigate();
-
-  const [selectedProject, setSelectedProject] = useState(null);
-
-  const handleImageClick = (project) => {
-    setSelectedProject(project);
-    navigate(`/projects/${project.project_name}`);
-  };
+  if (!projectData) {
+    return <div>Projekat nije pronađen.</div>;
+  }
 
   return (
     <div>
-      <Header page={"projects"}></Header>
+      <h1>{projectData.project_name}</h1>
 
-      <div className="content-projects">
-        <Box sx={{ width: 0.5, height: 1, ml: "25%", mr: "auto", mt: 20 }}>
-          <ImageList variant="masonry" cols={2} gap={30}>
-            {itemData.map((item) => (
-              <ImageListItem
-                key={item.img}
-                className="image-list-item"
-                onClick={() => handleImageClick(item)}
-              >
-                <div className="image-container">
-                  <div className="image-overlay"></div>
-                  <div className="image-text">Vaš tekst na dnu slike</div>
-                  <img
-                    srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                    src={`${item.img}?w=248&fit=crop&auto=format`}
-                    alt={item.project_name}
-                    loading="lazy"
-                    className="list-image"
-                  />
-                </div>
-              </ImageListItem>
-            ))}
-          </ImageList>
-        </Box>
+      {/* General Information */}
+      <div>
+        <h2>{projectData.description[0].title}</h2>
+        <p>{projectData.description[0].content}</p>
       </div>
 
-      <Footer></Footer>
+      <button>Link to Project</button>
+
+      {/* Image */}
+      <div>
+        <img
+          src={projectData.img}
+          alt={`${projectData.project_name} Screenshot`}
+        />
+      </div>
+
+      {/* Overview */}
+      <div>
+        <h2>{projectData.description[1].title}</h2>
+        <p>{projectData.description[1].content}</p>
+      </div>
+
+      {/* Map through the description array */}
+      {projectData.description.slice(2).map((item, index) => (
+        <div key={index}>
+          <h2>{item.title}</h2>
+          {/* Check if content is an array and handle accordingly */}
+          {Array.isArray(item.content) ? (
+            <ul>
+              {item.content.map((subItem, subIndex) => (
+                <li key={subIndex}>{subItem}</li>
+              ))}
+            </ul>
+          ) : (
+            <p>{item.content}</p>
+          )}
+        </div>
+      ))}
     </div>
   );
 };
@@ -229,4 +233,4 @@ const itemData = [
   },
 ];
 
-export default Projects;
+export default SingleProject;
