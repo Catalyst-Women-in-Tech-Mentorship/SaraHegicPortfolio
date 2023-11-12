@@ -1,6 +1,6 @@
 body {
   background-color: #150050;
-  /*font-family: "Pathway Gothic One";*/
+  
   font-family: 'Source Sans Pro',sans-serif
 
 }
@@ -530,7 +530,7 @@ button:hover {
   margin-top: 100px;
 }
 
-/* Primarni stilovi za velike ekrane */
+
 .content-left {
   width: 50%;
   align-items: center;
@@ -560,7 +560,7 @@ button:hover {
 
 }
 
-/* Dodatni stilovi za manje ekrane */
+
 @media (max-width: 768px) {
   .content-left {
     width: 100%;
@@ -569,7 +569,7 @@ button:hover {
 
   .btn-cv {
     position: static;
-    margin-top: 20px; /* Prilagodi margine za bolji raspored na manjim ekranima */
+    margin-top: 20px; 
   }
 
   .img1 {
@@ -577,8 +577,8 @@ button:hover {
     width: 100%;
     left: 0;
     top: 0;
-    margin-top: 20px; /* Prilagodi margine za bolji raspored na manjim ekranima */
-    border-radius: 0; /* Ukloni zaobljeni ivičnjak na manjim ekranima */
+    margin-top: 20px; 
+    border-radius: 0; 
   }
   .about-header {
     padding-left: 10%;
@@ -782,7 +782,7 @@ button:hover {
 }
 
 
-/************************************************************************************/
+
 
 .image-list-item {
   position: relative;
@@ -841,7 +841,7 @@ button:hover {
 }
 
 
-/****************************************************************/
+
 .project {
   margin-top: 5%;
   color: white;
