@@ -31,7 +31,7 @@ const Projects = () => {
                 className="image-list-item"
                 onClick={() => handleImageClick(item)}
               >
-                <div className="image-container">
+                <div className="image-container-p">
                   <div className="image-overlay"></div>
                   <div className="image-text">Vaš tekst na dnu slike</div>
                   <img

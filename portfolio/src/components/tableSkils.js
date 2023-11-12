@@ -21,7 +21,7 @@ const TableSkils = () => {
   };
 
   return (
-    <div style={{background: "linear-gradient(to bottom,#3F0071 , #150050 10%)", padding:"10%"}}>
+    <div  className="div1" >
       <div className="table-skills">
         <div className="development">
           <img className="logo2" src="../si.png" alt="logo"></img>
@@ -38,55 +38,10 @@ const TableSkils = () => {
               performance expectations
             </p>
           </div>
-        </div>
-
-        <div className="development">
-          <img className="logo2" src="../backend.png" alt="logo"></img>
-          <h3>BACKEND</h3>
-          <div className="dev-p">
-            <p>
-              I have a deep understanding of server-side programming and
-              databases. I enjoy working with technologies like Node.js, Python,
-              and databases like MongoDB and SQL.
-            </p>
-          </div>
-        </div>
-
-        <div className="development">
-          <img className="logo2" src="../frontend.png" alt="logo"></img>
-          <h3>FRONTEND</h3>
-          <div className="dev-p">
-            {" "}
-            <p>
-              I like to code things from scratch, and enjoy bringing ideas to
-              life in the browser. I specialize in creating engaging user
-              interfaces using modern web technologies like HTML, CSS, and
-              JavaScript. I'm adept at crafting responsive, user-friendly
-              designs.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div className="table-skills">
-        <div className="development">
-        <h4 style={{ color: "#d8bfff"}}>Skills I manage to advance: </h4>
+          <h4 style={{ color: "#d8bfff"}}>Skills I manage to advance: </h4>
         <p>Testing and debugging, Algorithm Skills, Agile Methods, Software Development </p>
 
-        </div>
-        <div className="development">
-        <h4 style={{ color: "#d8bfff"}}>Languages I speak: </h4>
-        <p>Node.js, Python, Java, SQL, C++ </p>
-        </div>
-        <div className="development">
-        <h4 style={{ color: "#d8bfff"}}>Languages I speak:</h4>
-        <p>HTML, CSS, JavaScript, React.js </p>
-        </div>
-      </div>
-      
-      <div className="table-skills">
-        <div className="skils">
-          <PieChart
+        <PieChart
             series={[
               {
                 arcLabel: (item) => `${item.label} (${item.value})`,
@@ -114,8 +69,20 @@ const TableSkils = () => {
             }}
           />
         </div>
-        <div className="skils">
-          <PieChart
+
+        <div className="development">
+          <img className="logo2" src="../backend.png" alt="logo"></img>
+          <h3>BACKEND</h3>
+          <div className="dev-p">
+            <p>
+              I have a deep understanding of server-side programming and
+              databases. I enjoy working with technologies like Node.js, Python,
+              and databases like MongoDB and SQL.
+            </p>
+          </div>
+          <h4 style={{ color: "#d8bfff"}}>Languages I speak: </h4>
+        <p>Node.js, Python, Java, SQL, C++ </p>
+        <PieChart
             series={[
               {
                 arcLabel: (item) => `${item.label} (${item.value})`,
@@ -142,9 +109,25 @@ const TableSkils = () => {
               legend: { hidden: true },
             }}
           />
+        
         </div>
-        <div className="skils">
-          <PieChart
+
+        <div className="development">
+          <img className="logo2" src="../frontend.png" alt="logo"></img>
+          <h3>FRONTEND</h3>
+          <div className="dev-p">
+            {" "}
+            <p>
+              I like to code things from scratch, and enjoy bringing ideas to
+              life in the browser. I specialize in creating engaging user
+              interfaces using modern web technologies like HTML, CSS, and
+              JavaScript. I'm adept at crafting responsive, user-friendly
+              designs.
+            </p>
+          </div>
+          <h4 style={{ color: "#d8bfff"}}>Languages I speak:</h4>
+        <p>HTML, CSS, JavaScript, React.js </p>
+        <PieChart
             series={[
               {
                 arcLabel: (item) => `${item.label} (${item.value})`,
@@ -173,6 +156,10 @@ const TableSkils = () => {
           />
         </div>
       </div>
+
+   
+      
+      
       <div className="tools">
         <h3>Dev tools I have experience in usage : </h3>
         <p>Bootstrap, MUI Material, Terminal, GIT, GitHub, JetBrains Developer Tools, Express.js, Django, VisualStudio Code, npm and Yarn</p>

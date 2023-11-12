@@ -71,15 +71,13 @@ const Header = ({ page }) => {
         <div
           className={`navbar-right-dropdown ${showNavLinks ? "visible" : ""}`}
         >
-          
-            <div>
-              <a className="active" href="/">
-                Home
-              </a>
-              <a href="/about">About Me</a>
-              <a href="/projects">Projects</a>
-            </div>
-          
+          <div>
+            <a className="active" href="/">
+              Home
+            </a>
+            <a href="/about">About Me</a>
+            <a href="/projects">Projects</a>
+          </div>
         </div>
       </motion.div>
     </div>

@@ -1,5 +1,8 @@
 import React from "react";
+
 import { useParams } from "react-router-dom";
+import Header from "./header";
+import Footer from "./footer";
 const SingleProject = () => {
   const { projectName } = useParams();
 
@@ -12,32 +15,33 @@ const SingleProject = () => {
   }
 
   return (
-    <div>
-      <h1>{projectData.project_name}</h1>
-
-      {/* General Information */}
-      <div>
-        <h2>{projectData.description[0].title}</h2>
-        <p>{projectData.description[0].content}</p>
-      </div>
-
-      <button>Link to Project</button>
-
-      {/* Image */}
-      <div>
-        <img
-          src={projectData.img}
-          alt={`${projectData.project_name} Screenshot`}
-        />
+    <div className="project">
+      <Header></Header>
+      <div className="project-intro">
+        {" "}
+        <h1>{projectData.project_name}</h1>
+        {/* General Information */}
+        <div>
+          <p>{projectData.description[0].content}</p>
+        </div>
+        <button>PROJECT LINK</button>
+        {/* Image */}
+        
+          <img
+            src={projectData.img}
+            alt={`${projectData.project_name} Screenshot`}
+          />
+        
       </div>
 
       {/* Overview */}
-      <div>
+      <div className="project-overview">
         <h2>{projectData.description[1].title}</h2>
         <p>{projectData.description[1].content}</p>
       </div>
 
       {/* Map through the description array */}
+      <div className="project-rest">
       {projectData.description.slice(2).map((item, index) => (
         <div key={index}>
           <h2>{item.title}</h2>
@@ -53,6 +57,9 @@ const SingleProject = () => {
           )}
         </div>
       ))}
+      </div>
+
+      <Footer></Footer>
     </div>
   );
 };
@@ -105,10 +112,12 @@ const itemData = [
     project_name: "Quiz",
 
     description: [
+
+      { title: "", content : "The React.js Quiz App is an engaging and interactive application designed for users to test their knowledge across a variety of topics."}, 
       {
         title: "Overview",
         content:
-          "The React.js Quiz App is an engaging and interactive application designed for users to test their knowledge across a variety of topics. Built using React.js, the app leverages a Trivia API to dynamically fetch questions and provide a diverse range of challenges. The game is structured with three difficulty levels, catering to users with varying expertise - easy, medium, and hard. Each level features a time-limited quiz to add an exciting element of urgency.",
+          " Built using React.js, the app leverages a Trivia API to dynamically fetch questions and provide a diverse range of challenges. The game is structured with three difficulty levels, catering to users with varying expertise - easy, medium, and hard. Each level features a time-limited quiz to add an exciting element of urgency.",
       },
       {
         title: "Key Features",
@@ -133,10 +142,11 @@ const itemData = [
     project_name: "Triba",
 
     description: [
+      {title: "", content:"Welcome to the thrilling realm of Triba!"   }, 
       {
         title: "Overview",
         content:
-          "Welcome to the thrilling realm of Triba! Prepare for an unforgettable gaming journey that harnesses the incredible capabilities of React, a powerful JavaScript library for crafting immersive user interfaces. Triba is an engaging and dynamic game that immerses players in a world of puzzles and strategic challenges. It delivers a captivating experience to challenge your mind, sharpen thinking skills, and build friendships with players from around the world. With its intuitive and interactive interface, Triba guarantees hours of entertainment and excitement. Thanks to React's advanced features, Triba is visually stunning, responsive, and highly interactive. Whether facing powerful Artificial Intelligence or challenging minds worldwide, it ensures a seamless and enjoyable gaming experience. Beyond incredible gameplay, Triba fosters a vibrant community where players connect, chat, and engage in thrilling multiplayer battles. Brace yourself for an extraordinary gaming adventure, immerse yourself in the captivating world of Triba, test your limits, and carve out your remarkable legacy. Witness the future of gaming unfold with Triba!",
+          " Prepare for an unforgettable gaming journey that harnesses the incredible capabilities of React, a powerful JavaScript library for crafting immersive user interfaces. Triba is an engaging and dynamic game that immerses players in a world of puzzles and strategic challenges. It delivers a captivating experience to challenge your mind, sharpen thinking skills, and build friendships with players from around the world. With its intuitive and interactive interface, Triba guarantees hours of entertainment and excitement. Thanks to React's advanced features, Triba is visually stunning, responsive, and highly interactive. Whether facing powerful Artificial Intelligence or challenging minds worldwide, it ensures a seamless and enjoyable gaming experience. Beyond incredible gameplay, Triba fosters a vibrant community where players connect, chat, and engage in thrilling multiplayer battles. Brace yourself for an extraordinary gaming adventure, immerse yourself in the captivating world of Triba, test your limits, and carve out your remarkable legacy. Witness the future of gaming unfold with Triba!",
       },
       {
         title: "Main Features",
@@ -156,7 +166,7 @@ const itemData = [
       {
         title: "Board Types",
         content:
-          "1. Small (4x5)\n2. Medium (6x7)\n3. Large (8x10)\n4. Crazy (rhombus)",
+          "1. Small (4x5) \n 2. Medium (6x7)\n3. Large (8x10)\n4. Crazy (rhombus)",
       },
       {
         title: "Board Type Description",
