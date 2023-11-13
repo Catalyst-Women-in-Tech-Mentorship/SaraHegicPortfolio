@@ -1,12 +1,11 @@
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence, useAnimation } from "framer-motion";
-import Projects from "../Pages/projects";
+import { motion, useAnimation } from "framer-motion";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import Face3Icon from "@mui/icons-material/Face3";
 import MenuIcon from "@mui/icons-material/Menu";
-import "../App.css";
+import "./header.css"
+import "../../App.css"
 
 const Header = ({ page }) => {
   const controls = useAnimation();
@@ -46,23 +45,28 @@ const Header = ({ page }) => {
 
           <div className="nav-links">
             <motion.a
-              href="/"
+              href="https://www.facebook.com/saraaa1207/"
               className="social-icon"
               whileHover={{ scale: 1.1 }}
+              target="_blank"
             >
               <FacebookIcon />
             </motion.a>
             <motion.a
-              href="/"
+              href="https://www.instagram.com/saraa.he_/"
               className="social-icon"
               whileHover={{ scale: 1.1 }}
+              target="_blank"
+
             >
               <InstagramIcon />
             </motion.a>
             <motion.a
-              href="/"
+              href="https://www.linkedin.com/in/sara-hegi%C4%87-7a941a232/"
               className="social-icon"
               whileHover={{ scale: 1.1 }}
+              target="_blank"
+
             >
               <LinkedInIcon />
             </motion.a>

@@ -1,5 +1,5 @@
 import ArrowCircleUpIcon from "@mui/icons-material/ArrowCircleUp";
-
+import "./footer.css"
 const Footer = () => {
   return (
     <div className="footer">

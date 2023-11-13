@@ -1,0 +1,140 @@
+
+.projects-grid {
+    background: linear-gradient(to bottom,
+    rgb(21, 0, 80) 0%,
+    rgb(97, 0, 148) 10%,
+    rgb(97, 0, 148) 90%,
+    rgb(21, 0, 80) 100%);
+    width: 100%;
+  }
+  
+  
+  
+  .header_projects {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    padding: 20px;
+  
+  }
+  
+  
+  
+  .header_projects h3 {
+    width: 50%;
+    color: white;
+    padding: 10px 20px;
+    border: 2px solid #661111;
+    border-radius: 5px;
+    font-size: 24px;
+    margin-bottom: 10px;
+    z-index: 1;
+  }
+  
+  
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    padding: 16px;
+  }
+  
+  .box {
+    margin-top: 50px;
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #f0f0f0;
+    padding: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: transform 0.2s;
+    cursor: pointer;
+    box-shadow: 20px 20px 19px 3px rgb(9 2 2 / 100%);
+  }
+  
+  .box:hover {
+    transform: scale(1.05);
+  }
+  
+  .image-container {
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+  }
+  
+  .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  
+  
+  .box a {
+    text-decoration: none;
+    color: #0074e1;
+    transition: color 0.2s;
+  }
+  
+  .box a:hover {
+    color: #0055a5;
+  }
+  
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .box:hover .overlay {
+    opacity: 1;
+  
+  }
+  
+  .overlay p {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  
+  
+  
+  
+  .footer_projects {
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 50px;
+  }
+  
+  .footer_projects p {
+    margin: 0;
+    color: white;
+  }
+  
+  .footer_projects a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.2s;
+  }
+  
+  .footer_projects a:hover {
+    color: #0055a5;
+  }
+  

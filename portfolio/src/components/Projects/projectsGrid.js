@@ -1,5 +1,5 @@
 import Grid from "@mui/material/Grid";
-
+import "./projects.css"
 const ProjectsGrid = () => {
   return (
     <div className="projects-grid">

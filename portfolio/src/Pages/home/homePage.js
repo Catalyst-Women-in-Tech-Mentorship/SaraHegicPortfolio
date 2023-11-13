@@ -1,11 +1,11 @@
 
 import { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
-import Footer from "../components/footer";
-import Header from "../components/header";
-import ProjectsGrid from "../components/projectsGrid";
-import ContactSection from "../components/contactSection";
-
+import Footer from "../../components/Footer/footer";
+import Header from "../../components/Header/header";
+import ProjectsGrid from "../../components/Projects/projectsGrid";
+import ContactSection from "../../components/Contact/contactSection";
+import "./home.css"
 const Home = () => {
 
   const controls = useAnimation();

@@ -1,51 +1,63 @@
-import Footer from "../components/footer";
-import Header from "../components/header";
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React from "react";
 
-import * as React from "react";
-import Box from "@mui/material/Box";
-import ImageList from "@mui/material/ImageList";
-import ImageListItem from "@mui/material/ImageListItem";
+import { useParams } from "react-router-dom";
+import Header from "../Header/header";
+import Footer from "../Footer/footer";
+import "./single-projects.css"
+const SingleProject = () => {
+  const { projectName } = useParams();
 
-const Projects = () => {
-  const navigate = useNavigate();
+  const projectData = itemData.find(
+    (item) => item.project_name === projectName
+  );
 
-  const [selectedProject, setSelectedProject] = useState(null);
-
-  const handleImageClick = (project) => {
-    setSelectedProject(project);
-    navigate(`/projects/${project.project_name}`);
-  };
+  if (!projectData) {
+    return <div>Projekat nije pronađen.</div>;
+  }
 
   return (
-    <div>
-      <Header page={"projects"}></Header>
+    <div className="project" style={{marginBottom: "10%"}}>
+      <Header></Header>
+      <div className="project-intro">
+        {" "}
+        <h1>{projectData.project_name}</h1>
+        {/* General Information */}
+        <div>
+          <p>{projectData.description[0].content}</p>
+        </div>
+        <button>PROJECT LINK</button>
+        {/* Image */}
+        
+          <img
+            src={projectData.img}
+            alt={`${projectData.project_name} Screenshot`}
+          />
+        
+      </div>
 
-      <div className="content-projects">
-        <Box sx={{ width: 0.5, height: 1, ml: "25%", mr: "auto", mt: 20 }}>
-          <ImageList variant="masonry" cols={2} gap={30}>
-            {itemData.map((item) => (
-              <ImageListItem
-                key={item.img}
-                className="image-list-item"
-                onClick={() => handleImageClick(item)}
-              >
-                <div className="image-container-p">
-                  <div className="image-overlay"></div>
-                  <div className="image-text">Vaš tekst na dnu slike</div>
-                  <img
-                    srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                    src={`${item.img}?w=248&fit=crop&auto=format`}
-                    alt={item.project_name}
-                    loading="lazy"
-                    className="list-image"
-                  />
-                </div>
-              </ImageListItem>
-            ))}
-          </ImageList>
-        </Box>
+      {/* Overview */}
+      <div className="project-overview">
+        <h2>{projectData.description[1].title}</h2>
+        <p>{projectData.description[1].content}</p>
+      </div>
+
+      {/* Map through the description array */}
+      <div className="project-rest">
+      {projectData.description.slice(2).map((item, index) => (
+        <div key={index}>
+          <h2>{item.title}</h2>
+          {/* Check if content is an array and handle accordingly */}
+          {Array.isArray(item.content) ? (
+            <ul>
+              {item.content.map((subItem, subIndex) => (
+                <li key={subIndex}>{subItem}</li>
+              ))}
+            </ul>
+          ) : (
+            <p>{item.content}</p>
+          )}
+        </div>
+      ))}
       </div>
 
       <Footer></Footer>
@@ -101,10 +113,12 @@ const itemData = [
     project_name: "Quiz",
 
     description: [
+
+      { title: "", content : "The React.js Quiz App is an engaging and interactive application designed for users to test their knowledge across a variety of topics."}, 
       {
         title: "Overview",
         content:
-          "The React.js Quiz App is an engaging and interactive application designed for users to test their knowledge across a variety of topics. Built using React.js, the app leverages a Trivia API to dynamically fetch questions and provide a diverse range of challenges. The game is structured with three difficulty levels, catering to users with varying expertise - easy, medium, and hard. Each level features a time-limited quiz to add an exciting element of urgency.",
+          " Built using React.js, the app leverages a Trivia API to dynamically fetch questions and provide a diverse range of challenges. The game is structured with three difficulty levels, catering to users with varying expertise - easy, medium, and hard. Each level features a time-limited quiz to add an exciting element of urgency.",
       },
       {
         title: "Key Features",
@@ -129,10 +143,11 @@ const itemData = [
     project_name: "Triba",
 
     description: [
+      {title: "", content:"Welcome to the thrilling realm of Triba!"   }, 
       {
         title: "Overview",
         content:
-          "Welcome to the thrilling realm of Triba! Prepare for an unforgettable gaming journey that harnesses the incredible capabilities of React, a powerful JavaScript library for crafting immersive user interfaces. Triba is an engaging and dynamic game that immerses players in a world of puzzles and strategic challenges. It delivers a captivating experience to challenge your mind, sharpen thinking skills, and build friendships with players from around the world. With its intuitive and interactive interface, Triba guarantees hours of entertainment and excitement. Thanks to React's advanced features, Triba is visually stunning, responsive, and highly interactive. Whether facing powerful Artificial Intelligence or challenging minds worldwide, it ensures a seamless and enjoyable gaming experience. Beyond incredible gameplay, Triba fosters a vibrant community where players connect, chat, and engage in thrilling multiplayer battles. Brace yourself for an extraordinary gaming adventure, immerse yourself in the captivating world of Triba, test your limits, and carve out your remarkable legacy. Witness the future of gaming unfold with Triba!",
+          " Prepare for an unforgettable gaming journey that harnesses the incredible capabilities of React, a powerful JavaScript library for crafting immersive user interfaces. Triba is an engaging and dynamic game that immerses players in a world of puzzles and strategic challenges. It delivers a captivating experience to challenge your mind, sharpen thinking skills, and build friendships with players from around the world. With its intuitive and interactive interface, Triba guarantees hours of entertainment and excitement. Thanks to React's advanced features, Triba is visually stunning, responsive, and highly interactive. Whether facing powerful Artificial Intelligence or challenging minds worldwide, it ensures a seamless and enjoyable gaming experience. Beyond incredible gameplay, Triba fosters a vibrant community where players connect, chat, and engage in thrilling multiplayer battles. Brace yourself for an extraordinary gaming adventure, immerse yourself in the captivating world of Triba, test your limits, and carve out your remarkable legacy. Witness the future of gaming unfold with Triba!",
       },
       {
         title: "Main Features",
@@ -152,7 +167,7 @@ const itemData = [
       {
         title: "Board Types",
         content:
-          "1. Small (4x5)\n2. Medium (6x7)\n3. Large (8x10)\n4. Crazy (rhombus)",
+          "1. Small (4x5) \n 2. Medium (6x7)\n3. Large (8x10)\n4. Crazy (rhombus)",
       },
       {
         title: "Board Type Description",
@@ -181,7 +196,7 @@ const itemData = [
   },
 
   {
-    img: "",
+    img: "../sildo.png",
     project_name: "Lectures/aka Slido.js",
     modules: [
       {
@@ -229,4 +244,4 @@ const itemData = [
   },
 ];
 
-export default Projects;
+export default SingleProject;

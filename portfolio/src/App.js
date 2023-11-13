@@ -1,11 +1,11 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
-import CV from "./Pages/CV";
-import Home from "./Pages/homePage";
-import About from "./Pages/about";
-import Projects from "./Pages/projects";
-import SingleProject from "./components/singleProject";
+import CV from "../src/Pages/CV/CV"
+import Home from "../src/Pages/home/homePage";
+import About from "../src/Pages/about/about";
+import Projects from "../src/Pages/projects/projects";
+import SingleProject from "../src/components/SingleProject/singleProject";
 function App() {
   return (
     <div>

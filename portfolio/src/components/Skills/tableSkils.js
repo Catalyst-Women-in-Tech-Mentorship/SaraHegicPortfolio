@@ -1,5 +1,5 @@
 import { PieChart, pieArcLabelClasses } from "@mui/x-charts/PieChart";
-
+import "./skills.css"
 const TableSkils = () => {
   const data = [
     { value: 10, label: "html" },

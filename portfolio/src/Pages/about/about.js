@@ -3,11 +3,11 @@ import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 
 import KeyboardDoubleArrowDownIcon from "@mui/icons-material/KeyboardDoubleArrowDown";
-import Header from "../components/header";
+import Header from "../../components/Header/header";
 import * as React from "react";
-import TableSkils from "../components/tableSkils";
-import Footer from "../components/footer";
-
+import TableSkils from "../../components/Skills/tableSkils";
+import Footer from "../../components/Footer/footer";
+import "./about.css"
 const About = () => {
   const controls1 = useAnimation();
   const controls2 = useAnimation();
