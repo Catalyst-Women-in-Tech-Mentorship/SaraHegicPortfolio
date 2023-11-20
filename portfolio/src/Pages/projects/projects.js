@@ -182,8 +182,8 @@ const itemData = [
 
   {
     img: "../sildo.png",
-    project_name: "Lectures/aka Slido.js",
-    modules: [
+    project_name: "Lectures-aka Slido.js",
+    description: [
       {
         title: "Project Overview",
         content:

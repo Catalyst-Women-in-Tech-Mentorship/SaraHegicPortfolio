@@ -21,12 +21,10 @@ const SingleProject = () => {
       <div className="project-intro">
         {" "}
         <h1>{projectData.project_name}</h1>
-        {/* General Information */}
         <div>
           <p>{projectData.description[0].content}</p>
         </div>
         <button>PROJECT LINK</button>
-        {/* Image */}
         
           <img
             src={projectData.img}
@@ -35,13 +33,11 @@ const SingleProject = () => {
         
       </div>
 
-      {/* Overview */}
       <div className="project-overview">
         <h2>{projectData.description[1].title}</h2>
         <p>{projectData.description[1].content}</p>
       </div>
 
-      {/* Map through the description array */}
       <div className="project-rest">
       {projectData.description.slice(2).map((item, index) => (
         <div key={index}>
@@ -197,8 +193,8 @@ const itemData = [
 
   {
     img: "../sildo.png",
-    project_name: "Lectures/aka Slido.js",
-    modules: [
+    project_name: "Lectures-aka Slido.js",
+    description: [
       {
         title: "Project Overview",
         content:

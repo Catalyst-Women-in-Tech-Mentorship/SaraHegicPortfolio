@@ -3,7 +3,9 @@ import "./contact.css"
 const ContactSection = () => {
   return (
     <div>
-      <div className="intro_to_contact">
+      <div className="intro_to_contact" id="contact">
+      <a name="contact"></a>
+
         <div >
           <img  className="logo1" src="../contact.png" alt="Logo" />
           <div className="line"></div>

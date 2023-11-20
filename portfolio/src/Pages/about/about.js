@@ -8,6 +8,7 @@ import * as React from "react";
 import TableSkils from "../../components/Skills/tableSkils";
 import Footer from "../../components/Footer/footer";
 import "./about.css"
+import { Link } from "react-router-dom";
 const About = () => {
   const controls1 = useAnimation();
   const controls2 = useAnimation();
@@ -150,7 +151,9 @@ const About = () => {
                     development goals. Thank you for visiting my portfolio, and
                     I look forward to the opportunity of working with you.
                   </p>
+                  <Link to="/#contact">
                   <button type="submit">Contact Me !</button>
+                  </Link>
                 </div>
                 <motion.div
                   className="r-i"
