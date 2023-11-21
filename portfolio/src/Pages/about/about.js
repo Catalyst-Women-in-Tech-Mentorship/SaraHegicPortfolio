@@ -102,7 +102,7 @@ const About = () => {
 
         <TableSkils></TableSkils>
 
-        <div style={{margin:"0", padding: "0"}}>
+        <div style={{marginBottom:"10%", padding: "0"}}>
           <div
             style={{
               background: "linear-gradient(to bottom, #150050, #3F0071 5%)",

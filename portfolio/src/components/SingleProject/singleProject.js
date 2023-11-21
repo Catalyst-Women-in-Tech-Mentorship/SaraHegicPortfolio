@@ -43,7 +43,7 @@ const SingleProject = () => {
         <div key={index}>
           <h2>{item.title}</h2>
           {Array.isArray(item.content) ? (
-            <ul>
+            <ul className="output">
               {item.content.map((subItem, subIndex) => (
                 <li key={subIndex}>{subItem}</li>
               ))}

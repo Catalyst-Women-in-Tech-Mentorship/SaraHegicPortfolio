@@ -1,5 +1,5 @@
 import Grid from "@mui/material/Grid";
-import "./projects.css"
+import "./projects.css";
 const ProjectsGrid = () => {
   return (
     <div className="projects-grid">
@@ -15,7 +15,7 @@ const ProjectsGrid = () => {
             <div className="image-container">
               <img src="../triba.png" alt="Slika 2" />
             </div>{" "}
-            <a href="/" target="_blank" rel="noopener noreferrer">
+            <a href="/projects/Triba" target="_blank" rel="noopener noreferrer">
               <div className="overlay">
                 <p>Triba Game</p>
               </div>
@@ -28,7 +28,7 @@ const ProjectsGrid = () => {
             <div className="image-container">
               <img src="../quiz.png" alt="Slika 2" />
             </div>
-            <a href="/" target="_blank" rel="noopener noreferrer">
+            <a href="/projects/Quiz" target="_blank" rel="noopener noreferrer">
               <div className="overlay">
                 <p>Quizz App</p>
               </div>
@@ -41,7 +41,11 @@ const ProjectsGrid = () => {
             <div className="image-container">
               <img src="../bb.png" alt="Slika 2" />
             </div>{" "}
-            <a href="/" target="_blank" rel="noopener noreferrer">
+            <a
+              href="/projects/Brick Breaker"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <div className="overlay">
                 <p>Brick Breaker</p>
               </div>

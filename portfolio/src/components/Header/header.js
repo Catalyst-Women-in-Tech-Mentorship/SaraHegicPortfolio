@@ -76,11 +76,11 @@ const Header = ({ page }) => {
           className={`navbar-right-dropdown ${showNavLinks ? "" : "visible"}`}
         >
           <div>
-            <a className="active" href="/">
+            <a className={page === "home" ? "active" : ""} href="/">
               Home
             </a>
-            <a href="/about">About Me</a>
-            <a href="/projects">Projects</a>
+            <a className={page === "about" ? "active" : ""} href="/about">About Me</a>
+            <a  className={page === "projects" ? "active" : ""}href="/projects">Projects</a>
           </div>
         </div>
       </motion.div>
