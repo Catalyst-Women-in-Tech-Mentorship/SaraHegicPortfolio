@@ -6,10 +6,9 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
-import "./projects.css"
+import "./projects.css";
 const Projects = () => {
   const navigate = useNavigate();
-
 
   const handleImageClick = (project) => {
     navigate(`/projects/${project.project_name}`);
@@ -21,7 +20,7 @@ const Projects = () => {
 
       <div className="content-projects">
         <Box sx={{ width: 0.3, height: 0.3, ml: "30%", mr: "auto", mt: 20 }}>
-          <ImageList variant="masonry" rows={1} cols={1}gap={30}>
+          <ImageList variant="masonry" rows={1} cols={1} gap={30}>
             {itemData.map((item) => (
               <ImageListItem
                 key={item.img}
