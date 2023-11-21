@@ -17,8 +17,8 @@ const Home = () => {
   return (
     <div>
       <Header page={"home"}></Header>
-      <a name="top"></a>
-      <div className="background-container">
+      
+      <div className="background-container" id="top">
         <motion.div className="text-overlay"
         animate={controls}>
           <h1>SARA HEGIĆ</h1>

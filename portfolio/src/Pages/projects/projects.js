@@ -1,7 +1,6 @@
 import Footer from "../../components/Footer/footer";
 import Header from "../../components/Header/header";
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import * as React from "react";
 import Box from "@mui/material/Box";
@@ -11,10 +10,8 @@ import "./projects.css"
 const Projects = () => {
   const navigate = useNavigate();
 
-  const [selectedProject, setSelectedProject] = useState(null);
 
   const handleImageClick = (project) => {
-    setSelectedProject(project);
     navigate(`/projects/${project.project_name}`);
   };
 
