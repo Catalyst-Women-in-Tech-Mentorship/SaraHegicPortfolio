@@ -73,7 +73,7 @@ const Header = ({ page }) => {
           </div>
         </div>
         <div
-          className={`navbar-right-dropdown ${showNavLinks ? "visible" : ""}`}
+          className={`navbar-right-dropdown ${showNavLinks ? "" : "visible"}`}
         >
           <div>
             <a className="active" href="/">

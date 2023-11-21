@@ -24,7 +24,7 @@ const SingleProject = () => {
         <div>
           <p>{projectData.description[0].content}</p>
         </div>
-        <button>PROJECT LINK</button>
+        <button><a style={{ textDecoration:"none",color:"black" }} href={projectData.link} target="_blank" rel="noreferrer">LINK TO GITHUB</a></button>
         
           <img
             src={projectData.img}
@@ -42,7 +42,6 @@ const SingleProject = () => {
       {projectData.description.slice(2).map((item, index) => (
         <div key={index}>
           <h2>{item.title}</h2>
-          {/* Check if content is an array and handle accordingly */}
           {Array.isArray(item.content) ? (
             <ul>
               {item.content.map((subItem, subIndex) => (
@@ -65,6 +64,7 @@ const itemData = [
   {
     img: "../bb.png",
     project_name: "Brick Breaker",
+    link : "",
     description: [
       {
         title: "General informations",
@@ -107,7 +107,7 @@ const itemData = [
   {
     img: "../quiz.png",
     project_name: "Quiz",
-
+    link: "https://github.com/Greenwoman1/Quizz-app.git",
     description: [
 
       { title: "", content : "The React.js Quiz App is an engaging and interactive application designed for users to test their knowledge across a variety of topics."}, 
@@ -137,7 +137,7 @@ const itemData = [
   {
     img: "../triba.png",
     project_name: "Triba",
-
+    link: "https://github.com/Greenwoman1/Triba-Game.git",
     description: [
       {title: "", content:"Welcome to the thrilling realm of Triba!"   }, 
       {
@@ -194,6 +194,7 @@ const itemData = [
   {
     img: "../sildo.png",
     project_name: "Lectures-aka Slido.js",
+    link: "https://github.com/Greenwoman1/Slido-Nodejs.git",
     description: [
       {
         title: "Project Overview",

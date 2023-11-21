@@ -32,7 +32,7 @@ const About = () => {
       <Header page={"about"}></Header>
       <div className="content">
         <div
-          style={{ background: "linear-gradient(to bottom, #150050, #3F0071)" }}
+          style={{ background: "linear-gradient(to bottom, #150050, #3F0071)" , margin:"0", padding:"0"}}
         >
           <div className="content-left">
             <motion.h1
@@ -102,10 +102,12 @@ const About = () => {
 
         <TableSkils></TableSkils>
 
-        <div>
+        <div style={{margin:"0", padding: "0"}}>
           <div
             style={{
               background: "linear-gradient(to bottom, #150050, #3F0071 5%)",
+              margin: "0",
+              padding: "0"
             }}
           >
             <div className="random">

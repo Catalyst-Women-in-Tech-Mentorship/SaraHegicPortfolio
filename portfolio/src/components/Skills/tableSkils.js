@@ -1,14 +1,22 @@
 import { PieChart, pieArcLabelClasses } from "@mui/x-charts/PieChart";
 import "./skills.css"
 const TableSkils = () => {
-  const data = [
-    { value: 10, label: "html" },
-    { value: 10, label: "CSS" },
-    { value: 15, label: "JS" },
-    { value: 20, label: "React" },
+  const data1 = [
+    { value: 10, label: "T&D" },
+    { value: 10, label: "Agile" },
+    { value: 15, label: "Algorithm" },
+    { value: 20, label: "Development" },
   ];
 
-  const datasofta = [
+  const data2 = [
+    { value: 10, label: "Node.js" },
+    { value: 10, label: "Python" },
+    { value: 15, label: "Java" },
+    { value: 20, label: "SQL" },
+    { value: 20, label: "C++" },
+  ];
+
+  const data3 = [
     { value: 10, label: "html" },
     { value: 10, label: "CSS" },
     { value: 15, label: "JS" },
@@ -44,9 +52,9 @@ const TableSkils = () => {
         <PieChart
             series={[
               {
-                arcLabel: (item) => `${item.label} (${item.value})`,
+                arcLabel: (item) => `${item.label} `,
                 arcLabelMinAngle: 45,
-                data: data,
+                data: data1,
                 cx: 100,
                 cy: 95,
                 innerRadius: 40,
@@ -85,9 +93,9 @@ const TableSkils = () => {
         <PieChart
             series={[
               {
-                arcLabel: (item) => `${item.label} (${item.value})`,
+                arcLabel: (item) => `${item.label} `,
                 arcLabelMinAngle: 45,
-                data: datasofta,
+                data: data2,
                 cx: 100,
                 cy: 95,
                 innerRadius: 40,
@@ -130,9 +138,9 @@ const TableSkils = () => {
         <PieChart
             series={[
               {
-                arcLabel: (item) => `${item.label} (${item.value})`,
+                arcLabel: (item) => `${item.label}`,
                 arcLabelMinAngle: 45,
-                data: datasofta,
+                data: data3,
                 cx: 100,
                 cy: 95,
                 innerRadius: 40,
